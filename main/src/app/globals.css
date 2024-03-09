@@ -1,0 +1,41 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+body{
+  color: white;
+  background: #000;
+  /* background: white;
+  color: black;
+  */
+}
+.header{
+  top: 0%;
+  position: fixed;
+  z-index: 999;
+  background: #110df3;
+  width: 100%;
+  padding: 20px;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+span{
+  color: blueviolet;
+}
+
+samp{
+  color: #2220c4;
+}
+
+
+.footer{
+  width: 100%;
+  min-height: 123px;
+  background: #52cc1a;
+  bottom: 0%;
+}

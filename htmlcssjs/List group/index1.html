@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>List Group</title>
+<style>
+    .list-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.list-group-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item:hover {
+  background-color: #f4f4f4;
+}
+
+</style>
+</head>
+<body>
+
+<div id="list" class="list-group">
+  <a href="#" class="list-group-item">Item 1</a>
+  <a href="#" class="list-group-item">Item 2</a>
+  <a href="#" class="list-group-item">Item 3</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

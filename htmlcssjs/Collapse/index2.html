@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collapse</title>
+<style>
+    .collapse {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<p class="d-inline-flex gap-1">
+  <a class="btn btn-primary" id="linkBtn" href="#collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" id="toggleBtn" type="button">
+    Button with data-bs-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const linkBtn = document.getElementById('linkBtn');
+  const toggleBtn = document.getElementById('toggleBtn');
+  const collapseExample = document.getElementById('collapseExample');
+
+  linkBtn.addEventListener('click', function() {
+    toggleCollapse();
+  });
+
+  toggleBtn.addEventListener('click', function() {
+    toggleCollapse();
+  });
+
+  function toggleCollapse() {
+    if (collapseExample.classList.contains('show')) {
+      collapseExample.classList.remove('show');
+    } else {
+      collapseExample.classList.add('show');
+    }
+  }
+});
+
+</script>
+</body>
+</html>

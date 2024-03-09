@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagination Example</title>
+<style>
+    .pagination {
+  text-align: center;
+}
+
+.pagination .page-item {
+  display: inline-block;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+  background-color: transparent;
+}
+
+</style>
+</head>
+<body>
+
+<nav aria-label="Page navigation example">
+  <ul id="pagination" class="pagination justify-content-end">
+    <li id="previousButton" class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li id="nextButton" class="page-item">
+      <a class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+    var currentPage = 1;
+var totalPages = 3;
+
+var previousButton = document.getElementById("previousButton");
+var nextButton = document.getElementById("nextButton");
+
+function renderPagination() {
+  var pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  previousButton.classList.toggle("disabled", currentPage === 1);
+  nextButton.classList.toggle("disabled", currentPage === totalPages);
+
+  var previousButtonClone = previousButton.cloneNode(true);
+  pagination.appendChild(previousButtonClone);
+
+  for (var i = 1; i <= totalPages; i++) {
+    var li = document.createElement("li");
+    li.className = "page-item";
+    var a = document.createElement("a");
+    a.className = "page-link";
+    a.href = "#";
+    a.innerHTML = i;
+    if (i === currentPage) {
+      li.classList.add("active");
+    }
+    a.addEventListener("click", function() {
+      currentPage = parseInt(this.innerHTML);
+      renderPagination();
+    });
+    li.appendChild(a);
+    pagination.appendChild(li);
+  }
+
+  var nextButtonClone = nextButton.cloneNode(true);
+  pagination.appendChild(nextButtonClone);
+}
+
+renderPagination();
+
+</script>
+</body>
+</html>

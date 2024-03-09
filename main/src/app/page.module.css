@@ -1,0 +1,44 @@
+.mainContainer{
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  padding-top: 3rem;
+}
+
+.fistDiv{
+ margin-top: 25px;
+  
+}
+.h1Div{
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+}
+.ImgDiv{
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+.h2Div{
+  font-size: x-large;
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+}
+.fistPra{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.fistPra > p{
+  font-size: larger;
+  width: 60%;
+
+}
+.btnLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1dc925;
+}

@@ -1,0 +1,63 @@
+
+.fistDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 60vw;
+    padding-left: 3%;
+}
+
+.h1Div {
+    font-size: x-large;    
+}
+
+.fistPra>p {margin-top: 10px;
+    margin-top:10px ;
+    font-size: x-large;
+    width: 100%;
+
+}
+
+.h2Div {
+    font-size: x-large;
+    margin-top: 34px;
+}
+
+.h2pra>p{
+font-size: medium;
+margin-top: 9px;
+}
+
+.codeTital{
+    margin-top: 9px;
+}
+.code{
+    border: 0.01px solid #62615f;
+    margin-top: 9px;
+}
+
+
+
+.leftNav {
+    height: 100vh;
+    width: 15rem;
+    margin-top: 1rem;
+    position: sticky;
+    top: 20px;
+    overflow: auto;
+}
+
+.leftNav li {
+    padding: 23px;
+    list-style: none;
+}
+.leftNav a {
+ text-decoration: none;
+ color: #ffffff;
+}
+.googleAdd{
+    color: #ffffff;
+    height: 99px;
+    width: 230px;
+    background: #3d6438;
+}

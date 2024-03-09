@@ -1,0 +1,8 @@
+.divCodeFist{
+    display: flex;
+     justify-content: center;
+   
+}
+.code{
+    border-top: 2px solid black;
+}

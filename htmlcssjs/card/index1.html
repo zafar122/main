@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card</title>
+<style>
+  .card {
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+img{
+    width: 33px;
+    height: 33px;
+}
+  .card h3 {
+    margin-top: 11px;
+  }
+
+  .card p {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 23px;
+  }
+
+  .card .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <img src="" alt="noset">
+  <h3>Card Title</h3>
+  <p>This is a simple card component.</p>
+  <button class="btn">Button</button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.card .btn');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Add your button click event logic here
+        console.log('Button clicked:', this.textContent);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

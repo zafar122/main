@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi Collapse</title>
+<style>
+    .collapse {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<p class="d-inline-flex gap-1">
+  <a class="btn btn-primary" id="toggleBtn1">Toggle first element</a>
+  <button class="btn btn-primary" id="toggleBtn2" type="button">Toggle second element</button>
+  <button class="btn btn-primary" id="toggleBothBtn" type="button">Toggle both elements</button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const toggleBtn1 = document.getElementById('toggleBtn1');
+  const toggleBtn2 = document.getElementById('toggleBtn2');
+  const toggleBothBtn = document.getElementById('toggleBothBtn');
+  const multiCollapse1 = document.getElementById('multiCollapseExample1');
+  const multiCollapse2 = document.getElementById('multiCollapseExample2');
+
+  toggleBtn1.addEventListener('click', function() {
+    toggleCollapse(multiCollapse1);
+  });
+
+  toggleBtn2.addEventListener('click', function() {
+    toggleCollapse(multiCollapse2);
+  });
+
+  toggleBothBtn.addEventListener('click', function() {
+    toggleCollapse(multiCollapse1);
+    toggleCollapse(multiCollapse2);
+  });
+
+  function toggleCollapse(collapseElement) {
+    if (collapseElement.classList.contains('show')) {
+      collapseElement.classList.remove('show');
+    } else {
+      collapseElement.classList.add('show');
+    }
+  }
+});
+
+</script>
+</body>
+</html>

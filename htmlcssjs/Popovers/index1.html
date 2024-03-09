@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popovers Example</title>
+<style>
+    .popover-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.popover-content::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+}
+
+</style>
+</head>
+<body>
+
+<button id="popoverButton">Show Popover</button>
+
+<div id="popoverContent" class="popover-content">
+  This is the content of the popover.
+</div>
+
+<script>
+    var popoverButton = document.getElementById("popoverButton");
+var popoverContent = document.getElementById("popoverContent");
+
+popoverButton.addEventListener("click", function() {
+  if (popoverContent.style.display === "block") {
+    popoverContent.style.display = "none";
+  } else {
+    popoverContent.style.display = "block";
+    positionPopover();
+  }
+});
+
+function positionPopover() {
+  var buttonRect = popoverButton.getBoundingClientRect();
+  var popoverRect = popoverContent.getBoundingClientRect();
+
+  var top = buttonRect.bottom + window.scrollY;
+  var left = buttonRect.left + (buttonRect.width - popoverRect.width) / 2;
+
+  popoverContent.style.top = top + "px";
+  popoverContent.style.left = left + "px";
+}
+
+</script>
+</body>
+</html>

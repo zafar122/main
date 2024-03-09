@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Alerts</title>
+<style>
+  .alert {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .alert.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+
+  .alert.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+
+  .alert.info {
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    color: #0c5460;
+  }
+
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<button id="liveAlertsBtn">Generate Live Alerts</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const closeAlert = function(alert) {
+      alert.style.display = 'none';
+    };
+
+    const createAlert = function(message, type) {
+      const alert = document.createElement('div');
+      alert.classList.add('alert', type);
+      
+      const closeBtn = document.createElement('span');
+      closeBtn.classList.add('close-btn');
+      closeBtn.innerHTML = '&times;';
+      closeBtn.addEventListener('click', function() {
+        closeAlert(alert);
+      });
+      
+      alert.appendChild(closeBtn);
+
+      const messageNode = document.createTextNode(message);
+      alert.appendChild(messageNode);
+      
+      document.body.appendChild(alert);
+
+      setTimeout(function() {
+        closeAlert(alert);
+      }, 5000); // Close alert after 5 seconds
+    };
+
+    const liveAlertsBtn = document.getElementById('liveAlertsBtn');
+    liveAlertsBtn.addEventListener('click', function() {
+      createAlert('This is a success message.', 'success');
+      createAlert('This is an error message.', 'error');
+      createAlert('This is an informational message.', 'info');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+.fistDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 60vw;
+    padding-left: 3%;
+}
+
+.h1Div {
+    font-size: x-large;    
+}
+
+.fistPra>p {margin-top: 10px;
+    margin-top:10px ;
+    font-size: x-large;
+    width: 100%;
+
+}
+
+.h2Div {
+    font-size: x-large;
+    margin-top: 34px;
+}
+
+.h2pra>p{
+font-size: medium;
+margin-top: 9px;
+}
+.codeDiv{
+    border: 1px solid white;
+}
+.noteDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 34px;
+    height: 64px;
+    background: rgb(50, 50, 245);
+    color: #ffffff;
+    border-left:8px solid #1ef701;
+}
+
+
+
+
+
+.leftNav {
+    height: 100vh;
+    width: 13rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    position: sticky;
+    top: 20px;
+    overflow: auto;
+}
+
+.leftNav li {
+    padding: 23px;
+    list-style: none;
+}
+.leftNav a {
+ text-decoration: none;
+ color: #ffffff;
+}
+.googleAdd{
+    color: #ffffff;
+    height: 99px;
+    width: 230px;
+    background: #3d6438;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collapse</title>
+<style>
+    .collapse-content {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<button class="collapse-btn" id="collapseBtn">Toggle Collapse</button>
+<div class="collapse-content" id="collapseContent">
+  <p>This is the content that can be collapsed.</p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const collapseBtn = document.getElementById('collapseBtn');
+  const collapseContent = document.getElementById('collapseContent');
+
+  collapseBtn.addEventListener('click', function() {
+    if (collapseContent.classList.contains('show')) {
+      collapseContent.classList.remove('show');
+    } else {
+      collapseContent.classList.add('show');
+    }
+  });
+});
+
+</script>
+</body>
+</html>

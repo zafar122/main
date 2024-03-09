@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagination Example</title>
+<style>
+    .pagination {
+  text-align: center;
+}
+
+.pagination button {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  color: black;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #ddd;
+}
+
+</style>
+</head>
+<body>
+
+<div id="pagination-demo" class="pagination"></div>
+
+<script>
+    var currentPage = 1;
+var totalPages = 10;
+
+function renderPagination() {
+  var pagination = document.getElementById("pagination-demo");
+  pagination.innerHTML = "";
+
+  var prevButton = document.createElement("button");
+  prevButton.innerHTML = "Previous";
+  prevButton.addEventListener("click", function() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPagination();
+    }
+  });
+  pagination.appendChild(prevButton);
+
+  for (var i = 1; i <= totalPages; i++) {
+    var button = document.createElement("button");
+    button.innerHTML = i;
+    if (i === currentPage) {
+      button.classList.add("active");
+    }
+    button.addEventListener("click", function() {
+      currentPage = parseInt(this.innerHTML);
+      renderPagination();
+    });
+    pagination.appendChild(button);
+  }
+
+  var nextButton = document.createElement("button");
+  nextButton.innerHTML = "Next";
+  nextButton.addEventListener("click", function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPagination();
+    }
+  });
+  pagination.appendChild(nextButton);
+}
+
+renderPagination();
+
+</script>
+</body>
+</html>

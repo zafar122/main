@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerts</title>
+<style>
+  .alert {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .alert.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+
+  .alert.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+
+  .alert.info {
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    color: #0c5460;
+  }
+
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="alert success">
+  <span class="close-btn">&times;</span>
+  <strong>Success!</strong> This is a success message.
+</div>
+
+<div class="alert error">
+  <span class="close-btn">&times;</span>
+  <strong>Error!</strong> This is an error message.
+</div>
+
+<div class="alert info">
+  <span class="close-btn">&times;</span>
+  <strong>Info!</strong> This is an informational message.
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const alert = this.parentElement;
+        alert.style.display = 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

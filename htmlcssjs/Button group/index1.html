@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Group</title>
+<style>
+  .button-group {
+    display: inline-block;
+  }
+
+  .button-group .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button-group .button:last-child {
+    margin-right: 0;
+  }
+
+  .button-group .button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-group" id="buttonGroup">
+  <button class="button">Button 1</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttonGroup = document.getElementById('buttonGroup');
+    const buttons = buttonGroup.querySelectorAll('.button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Add your click event logic here
+        console.log('Button clicked:', this.textContent);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

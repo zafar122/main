@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Chat</title>
+  <style>
+    /* Add your CSS styles here */
+    .whatsapp-icon {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: green; /* Change the background color to match WhatsApp's green */
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML structure for WhatsApp icon -->
+  <div class="whatsapp-icon" id="whatsappIcon">WhatsApp</div>
+
+  <script>
+    // JavaScript to open WhatsApp chat when the icon is clicked
+    document.getElementById("whatsappIcon").addEventListener("click", function() {
+      var phoneNumber = "1234567890"; // Replace this with the phone number you want to open the chat with
+      var url = "https://wa.me/" + phoneNumber;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

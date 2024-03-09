@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Close Button</title>
+<style>
+    .alert {
+  position: relative;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 55px;
+
+  cursor: pointer;
+  background: #000;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="alert">
+  <span class="close-btn">&times; this btn</span>
+  This is an alert message with a close button.
+</div>
+
+<script>document.addEventListener("DOMContentLoaded", function() {
+    const closeButtons = document.querySelectorAll('.close-btn');
+  
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const alert = this.parentElement;
+        alert.style.display = 'none';
+      });
+    });
+  });
+  </script>
+</body>
+</html>

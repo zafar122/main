@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toast Example</title>
+<style>
+    .toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toast-header .me-auto {
+  margin-right: auto;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+</style>
+</head>
+<body>
+
+<button onclick="showToast()">Show Toast</button>
+
+<div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded me-2" alt="...">
+    <strong class="me-auto">Custom Toast</strong>
+    <small id="toastTime"></small>
+    <button type="button" class="btn-close" onclick="hideToast()" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+</div>
+<script>
+    function showToast() {
+  var toast = document.getElementById("toast");
+  toast.classList.add("show");
+  var toastTime = document.getElementById("toastTime");
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
+  toastTime.innerText = timeString;
+}
+
+function hideToast() {
+  var toast = document.getElementById("toast");
+  toast.classList.remove("show");
+}
+
+</script>
+</body>
+</html>
